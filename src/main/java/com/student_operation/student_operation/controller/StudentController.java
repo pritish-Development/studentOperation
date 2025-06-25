@@ -5,6 +5,8 @@ import com.student_operation.student_operation.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/student")
 public class StudentController {
@@ -20,4 +22,18 @@ public class StudentController {
         return studentService.getStudentByRoll(roll);
     }
 
+    @DeleteMapping("/rollNum/{roll}")
+    public String deleteStudent(@PathVariable int roll){
+        return studentService.deleteStudent(roll);
+    }
+
+    @PutMapping("/updateStud/{roll}")
+    public Student updateStudent(@PathVariable int roll,@RequestBody Student student){
+        return studentService.updateStudent(roll,student);
+    }
+
+    @GetMapping()
+    public List<Student> getAllStudent(){
+        return studentService.getAllStudent();
+    }
 }

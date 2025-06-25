@@ -22,6 +22,16 @@ public class Student {
 
     private int age;
 
+    private String studCity;
+
+    public String getStudCity() {
+        return studCity;
+    }
+
+    public void setStudCity(String studCity) {
+        this.studCity = studCity;
+    }
+
     public int getRoll() {
         return roll;
     }
